@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.log
+
+# C/C++ specific
+*.dSYM/
+*.dSYM
+*.stackdump
+
+# VS Code
+.vscode/
+
+# Generated binaries
+/cpp-test-demo/main
+/cpp-test-demo/*.dSYM/
