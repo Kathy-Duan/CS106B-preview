@@ -6,8 +6,8 @@ using namespace std;
 int main() {
     int score;
     cin >> score;
-    int average;
-    int sum = 0;
+    double average;
+    double sum = 0;
     int count = 0;
     while (score != -1) {
         sum += score;

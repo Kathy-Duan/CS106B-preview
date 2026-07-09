@@ -8,5 +8,9 @@ int main() {
     cout << "Enter a number to be facotored: ";
     int number;
     cin >> number;
-    for (int i = 2, )
+    for (int i = 2; i <= number; i++) {
+        if (number % i == 0) {
+            
+        }
+    }
 }
