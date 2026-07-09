@@ -14,6 +14,5 @@ int main() {
 string removeCharacters(string str, string remove) {
     int removeIndex = str.find(remove);
     if (str.find(remove) != string::npos) {
-        
     }
 }

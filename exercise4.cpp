@@ -16,5 +16,6 @@ string capitalize(str) {
     string result;
     while (str)
     for (int i = 0, i < str.length(); i++) {
+        
     }
 }
