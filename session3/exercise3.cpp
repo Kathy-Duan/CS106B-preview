@@ -10,16 +10,19 @@ string substr(string str, int pos, int n);
 
 int main() {
     cout << substr("abcd", 1, 3) << endl;
-    cout << substr("abcd," 5, 3) << endl;
-    cout << substr("abcd", 2) << endl;
+    cout << substr("abcd", 5, 3) << endl;
+    cout << substr("abcd", 2, NULL) << endl;
     cout << substr ("abcd", 3, 6);
     return 0;
 }
 
 string substr(string str, int pos, int n) {
     string result;
+    if (n == NULL or n > str.length()) {
+        n = str.length();
+    }
     if (pos > str.length()) {
-        return -1;
+        return "error";
     }
     for (int i = pos; i <= n; i++) {
         result += str[i];
