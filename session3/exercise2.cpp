@@ -9,12 +9,12 @@ string trim(string str);
 
 
 int main() {
-    cout << trim("abc");
-    cout << trim("   abc  ");
-    cout << trim("   a bc  ");
-    cout << trim("");
-    cout << trim("   ");
-    cout << trim(" a ");
+    cout << trim("abc") << endl;
+    cout << trim("   abc  ") << endl;
+    cout << trim("   a bc  ") << endl;
+    cout << trim("") << endl;
+    cout << trim("   ") << endl;
+    cout << trim(" a ") << endl;
     return 0;
 }
 
@@ -25,4 +25,8 @@ string trim(string str) {
     while (left < right && str[left] == ' ') {
         left++;
     }
+    while (right > left && str[right] == ' ') {
+        right --;
+    }
+    return str.substr(left, right - left + 1);
 }
