@@ -9,18 +9,21 @@ using namespace std;
 int main() {
     stack<char> parenthesisQ;
     string str;
-    cin >> str;
+    getline(cin, str);
     for (int i = 0; i < str.length(); i++) {
-        if (str[i] == '{' or str[i] == '[' or str[i] == '(') {
+        if (parenthesisQ.empty()) {
             parenthesisQ.push(str[i]);
         }
-        else if (str[i] == '}') {
+        else if (str[i] == '{' or str[i] == '[' or str[i] == '(') {
+            parenthesisQ.push(str[i]);
+        }
+        else if (str[i] == '}' && !parenthesisQ.empty() && parenthesisQ.top() == '{') {
             parenthesisQ.pop();
         }
-        else if (str[i] == ']') {
+        else if (str[i] == ']' && !parenthesisQ.empty() && parenthesisQ.top() == '[') {
             parenthesisQ.pop();
         }
-        else if (str[i] == ')') {
+        else if (str[i] == ')' && !parenthesisQ.empty() && parenthesisQ.top() == '(') {
             parenthesisQ.pop();
         }
     }
