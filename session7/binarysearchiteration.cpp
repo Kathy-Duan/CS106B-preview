@@ -36,3 +36,20 @@ bool binarySearch(const vector<int>& elems, int key, int low, int high) {
         }
     }
 }
+
+
+bool binarySearch2(const vector<int>& elems, int key, int low, int high) {
+    int mid = low + (high - low) / 2;
+    while (low < high) {
+        if (elems[mid] == key) {
+            return true;
+        }
+        else if (key > elems[mid]) {
+            low = mid;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    return false;
+}

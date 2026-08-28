@@ -8,7 +8,7 @@ bool binarySearch(const vector<int>& elems, int key, int low, int high);
 int main() {
     vector<int> elems1 = {1, 2, 3, 4};
     int key1 = 2;
-    cout << binarySearch(elems1, key1, 0, elems1.size()) << endl;
+    cout << binarySearch(elems1, key1, 0, elems1.size() - 1) << endl;
     vector<int> elems2 = {1, 2, 3};
     int key2 = 2;
     cout << binarySearch(elems2, key2, 0, elems2.size() - 1) << endl;
