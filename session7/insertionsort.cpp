@@ -34,11 +34,11 @@ int main() {
 }
 
 void insertionSort(vector<int>& nums) {
-    for (int i = 0; i < nums.size(); i++) {
+    for (int i = 1; i < nums.size(); i++) {
         int j = i - 1;
         int temp = nums[i];
         while (j >= 0 && temp < nums[j]) {
-            nums[i] = nums[j];
+            nums[j + 1] = nums[j];
             nums[j] = temp;
             j--;
         }

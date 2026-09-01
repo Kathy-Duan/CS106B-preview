@@ -5,11 +5,11 @@
 
 using namespace std;
 
-void permutation();
+void permutation(const vector<char>& input, vector<char>& current,
+                        vector<bool>& used, vector<vector<char>>& result);
 
 
 int main() {
-    return 0;
     vector<char> input = {'A', 'H', 'I'};
     vector<char> current;
     vector<bool> used(input.size(), false);
@@ -19,6 +19,7 @@ int main() {
         for (char c : perm) {
             cout << c;
         }
+        cout << endl;
     }
     return 0;
 }
@@ -38,7 +39,5 @@ void permutation(const vector<char>& input, vector<char>& current,
         permutation(input, current, used, result);
         current.pop_back();
         used[i] = false;
-
     }
 }
-
