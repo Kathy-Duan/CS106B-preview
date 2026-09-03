@@ -5,11 +5,11 @@
 using namespace std;
 
 
-void numOfIslands(vector<vector<str>>& grid, int rows, int cols, int& result);
-void dfs(vector<vector<str>>& grid, int rows, int cols);
+void numOfIslands(vector<vector<string>>& grid, int rows, int cols, int& result);
+void dfs(vector<vector<string>>& grid, int r, int c, int rows, int cols);
 
 int main() {
-    vector<vector<str>> grid1 = {
+    vector<vector<string>> grid1 = {
         {"1","1","1","1","0"},
         {"1","1","0","1","0"},
         {"1","1","0","0","0"},
@@ -19,8 +19,8 @@ int main() {
     int cols1 = grid1[0].size();
     int result1 = 0;
     numOfIslands(grid1, rows1, cols1, result1);
-    cout << result << endl;
-    vector<vector<str>> grid2 = {
+    cout << result1 << endl;
+    vector<vector<string>> grid2 = {
       {"1","1","0","0","0"},
       {"1","1","0","0","0"},
       {"0","0","1","0","0"},
@@ -30,11 +30,11 @@ int main() {
     int cols2 = grid2[0].size();
     int result2 = 0;
     numOfIslands(grid2, rows2, cols2, result2);
-    cout << result << endl;
+    cout << result2 << endl;
     return 0;
 }
 
-void numOfIslands(vector<vector<str>>& grid, int rows, int cols, int& result) {
+void numOfIslands(vector<vector<string>>& grid, int rows, int cols, int& result) {
     for (int r = 0; r < rows; r++) {
         for (int c = 0; c < cols; c++) {
             if (grid[r][c] == "1") {
@@ -45,11 +45,11 @@ void numOfIslands(vector<vector<str>>& grid, int rows, int cols, int& result) {
     }
 }
 
-void dfs(vector<vector<str>>& grid, int r, int c, int rows, int cols) {
-    if (r < 0 || r >= rows || c < 0 || c >= cols || grid[r][c] = "0") {
+void dfs(vector<vector<string>>& grid, int r, int c, int rows, int cols) {
+    if (r < 0 || r >= rows || c < 0 || c >= cols || grid[r][c] == "0") {
         return;
     }
-    grid[r][c] = 0;
+    grid[r][c] = "0";
     dfs(grid, r - 1, c, rows, cols);
     dfs(grid, r + 1, c, rows, cols);
     dfs(grid, r, c - 1, rows, cols);

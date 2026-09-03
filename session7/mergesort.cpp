@@ -22,12 +22,15 @@ void mergeSort(vector<int>& nums, int low, int high) {
         return;
     }
     int mid = low + (high - low) / 2;
-    mergeSort(nums, low, mid - 1);
+    mergeSort(nums, low, mid);
     mergeSort(nums, mid + 1, high);
     vector<int> left(nums.begin() + low, nums.begin() + mid + 1);
     vector<int> right(nums.begin() + mid + 1, nums.begin() + high + 1);
     vector<int> result(left.size() + right.size());
     merge(left, right, result);
+    for (int i = 0; i < result.size(); i++) {
+        nums[low + i] = result[i];
+    }
 }
 
 void merge(const vector<int>& left, const vector<int>& right, vector<int>& result) {
@@ -43,10 +46,10 @@ void merge(const vector<int>& left, const vector<int>& right, vector<int>& resul
             result[k++] = right[j++];
         }
     }
-    while (j < left.size()) {
+    while (i < left.size()) {
         result[k++] = left[i++];
     }
-    while (i < right.size()) {
+    while (j < right.size()) {
         result[k++] = right[j++];
     }
 }
